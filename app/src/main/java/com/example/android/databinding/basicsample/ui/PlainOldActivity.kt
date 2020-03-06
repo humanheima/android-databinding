@@ -17,6 +17,7 @@
 package com.example.android.databinding.basicsample.ui
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -39,6 +40,14 @@ class PlainOldActivity : AppCompatActivity() {
 
     // Obtain ViewModel from ViewModelProviders
     private val viewModel by lazy { ViewModelProviders.of(this).get(SimpleViewModel::class.java) }
+
+    companion object {
+
+        fun launch(context: Context) {
+            val intent = Intent(context, PlainOldActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

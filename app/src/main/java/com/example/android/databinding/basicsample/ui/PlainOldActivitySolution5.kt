@@ -16,10 +16,12 @@
 
 package com.example.android.databinding.basicsample.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.example.android.databinding.basicsample.R
 import com.example.android.databinding.basicsample.data.SimpleViewModelSolution
 import com.example.android.databinding.basicsample.databinding.PlainActivitySolution5Binding
@@ -31,14 +33,22 @@ class PlainOldActivitySolution5 : AppCompatActivity() {
 
     // Obtain ViewModel from ViewModelProviders
     private val viewModel by lazy {
-        ViewModelProviders.of(this).get(SimpleViewModelSolution::class.java)
+        ViewModelProvider(this).get(SimpleViewModelSolution::class.java)
+    }
+
+    companion object {
+
+        fun launch(context: Context) {
+            val intent = Intent(context, PlainOldActivitySolution5::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val binding: PlainActivitySolution5Binding =
-            DataBindingUtil.setContentView(this, R.layout.plain_activity_solution_5)
+                DataBindingUtil.setContentView(this, R.layout.plain_activity_solution_5)
 
         binding.lifecycleOwner = this  // use Fragment.viewLifecycleOwner for fragments
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnOldVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="old version"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnSolution2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="solution2"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnSolution3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="solution3"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnSolution4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="solution4"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnSolution5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="solution5"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnFinalSolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="final solution"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</layout>

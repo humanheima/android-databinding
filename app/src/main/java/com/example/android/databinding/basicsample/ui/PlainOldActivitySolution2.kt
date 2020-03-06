@@ -17,6 +17,7 @@
 package com.example.android.databinding.basicsample.ui
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -28,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.android.databinding.basicsample.R
 import com.example.android.databinding.basicsample.data.Popularity
@@ -40,7 +42,16 @@ import com.example.android.databinding.basicsample.databinding.PlainActivitySolu
 class PlainOldActivitySolution2 : AppCompatActivity() {
 
     // Obtain ViewModel from ViewModelProviders
-    private val viewModel by lazy { ViewModelProviders.of(this).get(SimpleViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(SimpleViewModel::class.java) }
+
+
+    companion object {
+
+        fun launch(context: Context) {
+            val intent = Intent(context, PlainOldActivitySolution2::class.java)
+            context.startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
